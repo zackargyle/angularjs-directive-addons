@@ -81,7 +81,7 @@ toDoList: to-do-list
         if (scope.checked) $("label[for='custom-checkbox']").css("background-color", checkbox[1]);
         else $("label[for='custom-checkbox']").css("background-color", checkbox[0]);
       });
-      
+
     }
   }
 })
@@ -90,24 +90,22 @@ toDoList: to-do-list
     restrict: "A",
     template: "<form id='to-do-list'>" +
                 "<input ng-model='item'>" + "<br>" +
-                "<button ng-click='addToList()'>Add</button>" +
-                "<button ng-click='removeFromList()''>Remove</button>" +
+                "<button ng-click='add()'>Add</button>" +
+                "<button ng-click='remove()''>Remove</button>" +
                 "<br>" +
-                "<div id='append-to-list'></div>" +
+                "<div id='append-to-do-list'></div>" +
               "</form>",
     scope: {},
-    link: function($scope, elem, attrs) {
+    link: function($scope,elem,attrs) {
 
-      $scope.addToList = function() {
-          console.log('hey');
+      $scope.add = function() {
           var p = "<div><input type='checkbox'><p>" + $scope.item + "</p></div>";
-          $('#append-to-list').append(p);
+          $('#append-to-do-list').append(p);
           $scope.item = "";
       };
 
-      $scope.removeFromList = function() {
-        $("#append-to-list > div").each(function() {
-          console.log($(this).children());
+      $scope.remove = function() {
+        $("#append-to-do-list > div").each(function() {
           if ($(this).children()[0].checked) {
             $(this).remove();
           }
