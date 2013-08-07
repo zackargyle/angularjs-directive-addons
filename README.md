@@ -11,13 +11,13 @@ enterNext: enter-next
   - Use in inputs to defer default submit
   - When enter is pressed, focus is moved to next input
 
-highlight: highlight="<event>,<color>"
+highlight: highlight="event,color"
   - Element toggles to color on event
 
 clickToHide: click-to-hide
   - Element disappears on click
 
-checkbox: checkbox="<color-unchecked>,<color-checked>"
+checkbox: checkbox="color-unchecked,color-checked"
   - On click, checkbox toggles color
 
 toDoList: to-do-list
